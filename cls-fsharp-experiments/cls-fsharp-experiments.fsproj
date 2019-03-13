@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="BenchmarkUtil.fs" />
+    <Compile Include="ServiceComposition\ServiceComposition.fs" />
+    <Compile Include="RecordCalculus\RecordCalculus.fs" />
+    <Compile Include="ProcessSynthesis\ProcessSynthesis.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\cls-fsharp-core\cls-fsharp-core.fsproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="4.6.2" />
+  </ItemGroup>
+
+</Project>
