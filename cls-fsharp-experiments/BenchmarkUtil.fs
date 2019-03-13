@@ -36,6 +36,7 @@ let printLogger level (message : Lazy<string>) = printfn "%s" (message.Force())
 let runExperiment (maxTreeDepth : int) (atomicSubtypes : ID -> ID -> bool) (environment : Environment) (goal : IntersectionType) = 
     printfn "type environment: "
     for (id, sigma) in environment do printfn "%s : %O" id sigma
+    printfn "type environment size %O" (List.length environment)
     printfn "goal type: "
     printfn "%O" goal
     printfn "goal type size %O" (getTypeSize goal)

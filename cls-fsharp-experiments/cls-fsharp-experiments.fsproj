@@ -11,6 +11,9 @@
     <Compile Include="MixinComposition\MixinComposition.fs" />
     <Compile Include="ProcessSynthesis\ProcessSynthesis.fs" />
     <Compile Include="TwoCounterAutomaton\TwoCounterAutomaton.fs" />
+    <Compile Include="LabyrinthExploration\LabyrinthExploration.fs" />
+    <Compile Include="FiniteFunctionComposition\FiniteFunctionComposition.fs" />
+    <Compile Include="Runner\Runner.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
