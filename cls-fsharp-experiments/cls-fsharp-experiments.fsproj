@@ -8,8 +8,9 @@
   <ItemGroup>
     <Compile Include="BenchmarkUtil.fs" />
     <Compile Include="ServiceComposition\ServiceComposition.fs" />
-    <Compile Include="RecordCalculus\RecordCalculus.fs" />
+    <Compile Include="MixinComposition\MixinComposition.fs" />
     <Compile Include="ProcessSynthesis\ProcessSynthesis.fs" />
+    <Compile Include="TwoCounterAutomaton\TwoCounterAutomaton.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 

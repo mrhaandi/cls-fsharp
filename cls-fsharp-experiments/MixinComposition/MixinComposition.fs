@@ -1,9 +1,9 @@
-﻿module CLS.Experiments.RecordCalculus
+﻿module CLS.Experiments.MixinComposition
 
 open CLS.Model.Type
 open CLS.Experiments.BenchmarkUtil
 
-let run_RecordCalculus () = 
+let run_MixinComposition () = 
     let record fields = Constructor("Record", [getIntersect fields])
 
     let alpha_get = Var ("alpha_get")

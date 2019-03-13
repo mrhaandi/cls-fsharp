@@ -19,6 +19,10 @@ let getKeys (m : Map<'a, 'b>) = seq { for entry in m do yield entry.Key }
 let getCombinatorExpressionVariables (expression : CombinatorExpression) =
     expression |> snd |> Set.ofList
 
+let rec combinatorTermSize (term : CombinatorTerm) : int = 
+    match term with
+    | CombinatorTerm(_, terms) -> 1 + (terms |> List.sumBy combinatorTermSize)
+
 (*
 let rec isClosedCombinatorTerm = function
     | CombinatorVariable _ -> false
@@ -83,7 +87,6 @@ let listMinimalCombinatorTerms (numberOfTerms : int) (grammar : TreeGrammar) (no
     updateMinimalTerms (new HashSet<IntersectionType>(getKeys grammar))
 
     match minimalClosedTerms.TryGetValue(nonTerminal) with
-    | (true, []) -> failwithf "No closed term can be deduced from %O" nonTerminal
     | (true, minimalTerms) -> minimalTerms |> List.sortBy fst |> List.map snd
     | (false, _) -> failwithf "Given non-terminal %O is not in the given grammar" nonTerminal
 

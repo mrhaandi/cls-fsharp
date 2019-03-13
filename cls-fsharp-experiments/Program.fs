@@ -1,8 +1,9 @@
 ﻿open System.Threading
 
 open CLS.Experiments.ServiceComposition
-open CLS.Experiments.RecordCalculus
+open CLS.Experiments.MixinComposition
 open CLS.Experiments.ProcessSynthesis
+open CLS.Experiments.TwoCounterAutomaton
 
 [<EntryPoint>]
 let main argv =
@@ -11,21 +12,25 @@ let main argv =
 
     printfn "Select one of the following experiments:"
     printfn "1: Service Composition"
-    printfn "2: Record Calculus"
+    printfn "2: Mixin Composition"
     printfn "3: Process Synthesis"
+    printfn "4: Two Counter Automaton Simulation"
 
-    match System.Console.ReadKey().KeyChar with
+    let key = System.Console.ReadKey().KeyChar
+    printfn "\n"
+
+    match key with
     | '1' -> 
-        printfn "\n"
         let thread = new Thread(run_ServiceComposition, stackSizeInBytes)
         thread.Start()
     | '2' -> 
-        printfn "\n"
-        let thread = new Thread(run_RecordCalculus, stackSizeInBytes)
+        let thread = new Thread(run_MixinComposition, stackSizeInBytes)
         thread.Start()
     | '3' -> 
-        printfn "\n"
         let thread = new Thread(run_ProcessSynthesis, stackSizeInBytes)
+        thread.Start()
+    | '4' -> 
+        let thread = new Thread(run_TwoCounterAutomaton, stackSizeInBytes)
         thread.Start()
     | _ ->  printfn "\nERROR: No experiment selected"
 

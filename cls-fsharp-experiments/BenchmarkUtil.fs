@@ -36,6 +36,9 @@ let printLogger level (message : Lazy<string>) = printfn "%s" (message.Force())
 let runExperiment (maxTreeDepth : int) (atomicSubtypes : ID -> ID -> bool) (environment : Environment) (goal : IntersectionType) = 
     printfn "type environment: "
     for (id, sigma) in environment do printfn "%s : %O" id sigma
+    printfn "goal type: "
+    printfn "%O" goal
+    printfn "goal type size %O" (getTypeSize goal)
     //let getAllInhabitantsInContext = getAllInhabitants printLogger isSubtype context
     let getAllInhabitantsInContext = getAllInhabitants maxTreeDepth emptyLogger atomicSubtypes environment
     let grammar = duration (fun _ -> getAllInhabitantsInContext goal)
@@ -43,6 +46,8 @@ let runExperiment (maxTreeDepth : int) (atomicSubtypes : ID -> ID -> bool) (envi
     if (inhabitants.Length = 0) then printfn "no inhabitants found"
     else
         printfn "some inhabitants:"
-        for term in inhabitants do printfn "%O" term
+        for term in inhabitants do 
+            printfn "%O" term
+            printfn "term size %O" (combinatorTermSize term)
     printfn "done"
     ()

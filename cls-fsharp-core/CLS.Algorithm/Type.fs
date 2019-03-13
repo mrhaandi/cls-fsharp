@@ -470,7 +470,20 @@ let rec getVariance id =
         |> getVarianceSupremum
     | _ -> UnknownVariance //Omega
 
+/// <summary>
+/// Returns the map containing least upper bounds of variances of variables occurring in the given types.
+/// </summary>
 let getAccumulatedVariances (ids : Set<ID>) (types : seq<IntersectionType>) : Map<ID, Variance> =
     ids
     |> Seq.map (fun id -> (id, types |> Seq.map (getVariance id) |> getVarianceSupremum))
     |> Map.ofSeq
+
+/// <summary>
+/// Returns the number of nodes in the syntax tree in the given type.
+/// </summary>
+let rec getTypeSize =
+    function
+    | Var(_) -> 1
+    | Arrow(s, t) -> 1 + (getTypeSize s) + (getTypeSize t)
+    | Constructor(_, ts) -> 1 + (ts |> List.sumBy getTypeSize)
+    | Intersect(ts) -> 1 + (ts |> Seq.sumBy getTypeSize)
