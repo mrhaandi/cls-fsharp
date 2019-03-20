@@ -1,5 +1,10 @@
 ﻿module CLS.Experiments.ProcessSynthesis
 
+//based on
+//J. Bessai, A. Dudenhefner, B. Düdder, M. Martens, and J. Rehof. Combinatory process synthesis. 
+//In Leveraging Applications of Formal Methods, Verification and Validation: Foundational Techniques - 7th International Symposium, 
+//ISoLA 2016, Imperial, Corfu, Greece, October 10-14, 2016, Proceedings, Part I, pages 266–281, 2016.
+
 open CLS.Model.Type
 open CLS.Experiments.BenchmarkUtil
 open CLS.Algorithm

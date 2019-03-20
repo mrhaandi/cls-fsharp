@@ -19,9 +19,8 @@ let main argv =
     printfn "3: Process Synthesis"
     printfn "4: Two Counter Automaton Simulation"
     printfn "5: Labyrinth Exploration"
-
-    printfn "7: Finite Function Composition"
-    printfn "8: Runner"
+    printfn "6: Finite Function Composition"
+    printfn "7: Runner"
 
     let key = System.Console.ReadKey().KeyChar
     printfn "\n"
@@ -42,10 +41,10 @@ let main argv =
     | '5' -> 
         let thread = new Thread(run_LabyrinthExploration, stackSizeInBytes)
         thread.Start()
-    | '7' -> 
+    | '6' -> 
         let thread = new Thread(run_FiniteFunctionComposition, stackSizeInBytes)
         thread.Start()
-    | '8' -> 
+    | '7' -> 
         let thread = new Thread(run_Runner, stackSizeInBytes)
         thread.Start()
     | _ ->  printfn "\nERROR: No experiment selected"

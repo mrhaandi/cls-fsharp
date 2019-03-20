@@ -1,5 +1,8 @@
 ﻿module CLS.Experiments.MixinComposition
 
+//based on Section 5.2 and Section 5.3 in
+//J. Bessai, T. Chen, A. Dudenhefner, B. Düdder, U. de’Liguoro, and J. Rehof. Mixin composition synthesis based on intersection types. Logical Methods in Computer Science, 14(1), 2018.
+
 open CLS.Model.Type
 open CLS.Experiments.BenchmarkUtil
 

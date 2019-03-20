@@ -1,5 +1,8 @@
 ﻿module CLS.Experiments.ServiceComposition
 
+//based on Section 4.3 in
+//J. Rehof. Towards Combinatory Logic Synthesis. In BEAT 2013, 1st International Workshop on Behavioural Types. ACM, 2013.
+
 open CLS.Model.Type
 open CLS.Experiments.BenchmarkUtil
 
