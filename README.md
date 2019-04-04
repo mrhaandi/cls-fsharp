@@ -1,5 +1,5 @@
-# cls-fsharp
-(CL)S-F# is an implementation of the Combinatory Logic Synthesizer algorithm in F#. 
+# (CL)S-F# 
+Implementation of the Combinatory Logic Synthesizer algorithm in F#. 
 
 ## Theory
 
